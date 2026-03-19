@@ -1,0 +1,40 @@
+version: "3.8"
+
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: aiassistant-ollama-1
+    ports:
+      - "11434:11434"
+    command: serve
+
+  backend:
+    build: .
+    container_name: aiassistant-backend-1
+    command: >
+      uvicorn app.main:app
+        --host 0.0.0.0
+        --port 8000
+        --reload
+    ports:
+      - "8000:8000"
+    environment:
+      - OLLAMA_HOST=http://ollama:11434
+    depends_on:
+      - ollama
+
+  ui:
+    build: .
+    container_name: aiassistant-ui-1
+    command: >
+      streamlit run app/streamlit_app.py
+        --server.port=8501
+        --server.address=0.0.0.0
+        --server.enableCORS=false
+    ports:
+      - "8501:8501"
+    environment:
+      - INTERNAL_API_URL=http://backend:8000
+      - EXTERNAL_API_URL=http://localhost:8000
+    depends_on:
+      - backend
