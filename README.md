@@ -31,7 +31,6 @@ A privacy-compliant AI assistant that enables staff at a school, nonprofit, or c
   - Generates a Week 1 onboarding checklist from policy excerpts
   - Creates a 5‑question multiple‑choice quiz from safety documents
 - **Guardrails**: Enforce response schemas, ban sensitive words, and validate JSON output.
-![image](https://github.com/user-attachments/assets/73e5940b-352a-481c-a075-6cc5165c81c2)
 
 Video Recording Link : https://drive.google.com/file/d/1yD8Gf3tCeDO1pK9Z9Pmv85To2koiP91R/view?usp=sharing
 ## Prerequisites
