@@ -32,7 +32,6 @@ A privacy-compliant AI assistant that enables staff at a school, nonprofit, or c
   - Creates a 5‑question multiple‑choice quiz from safety documents
 - **Guardrails**: Enforce response schemas, ban sensitive words, and validate JSON output.
 
-Video Recording Link : https://drive.google.com/file/d/1yD8Gf3tCeDO1pK9Z9Pmv85To2koiP91R/view?usp=sharing
 ## Prerequisites
 - Python 3.8+
 - pip (or Poetry)
